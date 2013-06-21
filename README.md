@@ -32,10 +32,28 @@ The following overrides **plexus-component-metadata**  to version **1.5.5**
 
     mvn install -DpluginVersion:org.codehaus.plexus:plexus-component-metadata=1.5.5
 
-## Install
+## Installation options
+### Install from source
 After cloning the repo, you can make the extension active for all maven builds by running the following commands:
 
     mvn package && sudo cp target/maven-dependency-management-extension*.jar /usr/share/maven/lib/ext/
+
+### Install from Maven Central
+
+The jar can be downloaded from Maven Central here (save to `/usr/share/maven/lib/ext/` or `$M2_HOME/lib/ext`): http://repo1.maven.org/maven2/org/jboss/maven/extension/dependency/maven-dependency-management-extension/
+
+### Activate for an individual project
+Add this to **pom.xml** (fill in **VERSION**, eg 1.0.1):
+
+    <build>
+        <extensions>
+            <extension>
+                <groupId>org.jboss.maven.extension.dependency</groupId>
+                <artifactId>maven-dependency-management-extension</artifactId>
+                <version>VERSION</version>
+            </extension>
+        </extensions>
+    </build>
 
 ## Uninstall
 If you wish to remove the extension after installing it, run the following command:
