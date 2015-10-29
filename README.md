@@ -2,6 +2,14 @@
 
 A Maven core extension (lifecycle participant) which adds dependency management features to Maven to allow dependency and plugin versions to be overridden using a command line property.
 
+<table border="3">
+<tr>
+<td>
+    <b>WARNING</b> : This extension has been deprecated and its functionality rolled into https://github.com/release-engineering/pom-manipulation-ext.
+</td>
+</tr>
+</table>
+
 If any of the extension's options are used, the results are recorded in .properties format in META-INF/maven/groupId/artifactId/, the same place that maven copies the normal pom file to. An "effective pom" representation of the post-modification pom model is also written to this directory. These actions help mitigate loss of build repeatability.
 
 This extension is compatible with Maven 3.  It has not been tested with Maven 2.x and will likely not work correctly.
